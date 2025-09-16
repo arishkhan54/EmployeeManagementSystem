@@ -1,0 +1,170 @@
+<div class="container-fluid py-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-10 col-sm-12">
+            <div class="card shadow-lg">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="card-title mb-0">
+                        <i class="fas fa-user-plus me-2"></i>Add New Employee
+                    </h3>
+                </div>
+                <div class="card-body p-4">
+                    <form #f="ngForm" (ngSubmit)="f.form.valid && onSubmit()" class="needs-validation" novalidate>
+                        
+                        <!-- Personal Information -->
+                        <div class="row mb-4">
+                            <div class="col-12">
+                                <h5 class="text-primary mb-3">
+                                    <i class="fas fa-user me-2"></i>Personal Information
+                                </h5>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label fw-bold">First Name</label>
+                                <input type="text" class="form-control" id="fname" 
+                                       [(ngModel)]="employee.fname" name="fname" required minlength="3" 
+                                       #fname="ngModel" 
+                                       [ngClass]="{ 'is-invalid': f.submitted && fname.errors }" />
+                                <div *ngIf="f.submitted && fname.errors" class="invalid-feedback">
+                                    <div *ngIf="fname.errors['required']">First name is required</div>
+                                    <div *ngIf="fname.errors['minlength']">First Name minimum 3 characters are required</div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label fw-bold">Last Name</label>
+                                <input type="text" class="form-control" id="lname" 
+                                       [(ngModel)]="employee.lname" required name="lname"
+                                       #lname="ngModel" 
+                                       [ngClass]="{ 'is-invalid': f.submitted && lname.errors }">
+                                <div *ngIf="f.submitted && lname.errors" class="invalid-feedback">
+                                    <div *ngIf="lname.errors['required']">Last name is required</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Contact Information -->
+                        <div class="row mb-4">
+                            <div class="col-12">
+                                <h5 class="text-primary mb-3">
+                                    <i class="fas fa-envelope me-2"></i>Contact Information
+                                </h5>
+                            </div>
+                            <div class="col-12 mb-3">
+                                <label class="form-label fw-bold">Email Address</label>
+                                <input type="email" class="form-control" id="email" 
+                                       [(ngModel)]="employee.email" name="email" required email 
+                                       #email="ngModel" 
+                                       [ngClass]="{ 'is-invalid': f.submitted && email.invalid }" />
+                                <div *ngIf="f.submitted && email.errors" class="invalid-feedback">
+                                    <div *ngIf="email.errors['required']">Email is required</div>
+                                    <div *ngIf="email.invalid">Invalid email format</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Professional Information -->
+                        <div class="row mb-4">
+                            <div class="col-12">
+                                <h5 class="text-primary mb-3">
+                                    <i class="fas fa-briefcase me-2"></i>Professional Information
+                                </h5>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label fw-bold">Department</label>
+                                <select id="department" class="form-select" 
+                                        [(ngModel)]="employee.department" name="department" required
+                                        #department="ngModel" 
+                                        [ngClass]="{ 'is-invalid': f.submitted && department.errors }">
+                                    <option selected disabled value="">Choose Department...</option>
+                                    <option value="IT">IT</option>
+                                    <option value="HR">HR</option>
+                                    <option value="Finance">Finance</option>
+                                    <option value="Marketing">Marketing</option>
+                                    <option value="Sales">Sales</option>
+                                    <option value="Operations">Operations</option>
+                                </select>
+                                <div *ngIf="f.submitted && department.errors" class="invalid-feedback">
+                                    <div *ngIf="department.errors['required']">Department is required</div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label fw-bold">Designation</label>
+                                <select id="designation" class="form-select" 
+                                        [(ngModel)]="employee.designation" name="designation" required
+                                        #designation="ngModel" 
+                                        [ngClass]="{ 'is-invalid': f.submitted && designation.errors }">
+                                    <option selected disabled value="">Choose Designation...</option>
+                                    <option value="Developer">Developer</option>
+                                    <option value="Manager">Manager</option>
+                                    <option value="Analyst">Analyst</option>
+                                    <option value="Accountant">Accountant</option>
+                                    <option value="System Analyst">System Analyst</option>
+                                    <option value="Marketing Specialist">Marketing Specialist</option>
+                                    <option value="CEO">CEO</option>
+                                    <option value="Team Lead">Team Lead</option>
+                                    <option value="Senior Developer">Senior Developer</option>
+                                </select>
+                                <div *ngIf="f.submitted && designation.errors" class="invalid-feedback">
+                                    <div *ngIf="designation.errors['required']">Designation is required</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Financial Information -->
+                        <div class="row mb-4">
+                            <div class="col-12">
+                                <h5 class="text-primary mb-3">
+                                    <i class="fas fa-dollar-sign me-2"></i>Financial Information
+                                </h5>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label fw-bold">Salary</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">$</span>
+                                    <input type="text" class="form-control" id="salary" 
+                                           [(ngModel)]="employee.salary" name="salary" 
+                                           required pattern="^[1-9]\d{2,}$"
+                                           #salary="ngModel" 
+                                           [ngClass]="{ 'is-invalid': f.submitted && salary.errors }" />
+                                </div>
+                                <div *ngIf="f.submitted && salary.errors" class="invalid-feedback">
+                                    <div *ngIf="salary.errors['required']">Salary is required</div>
+                                    <div *ngIf="salary.invalid">
+                                        Salary must be a number, more than 3 digits, and not starting with zero.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label fw-bold">Joining Date</label>
+                                <input type="date" class="form-control" id="joiningDate" 
+                                       [(ngModel)]="employee.joiningDate" name="joiningDate" required 
+                                       #joiningDate="ngModel" 
+                                       [ngClass]="{ 'is-invalid': f.submitted && joiningDate.errors }">
+                                <div *ngIf="f.submitted && joiningDate.errors" class="invalid-feedback">
+                                    <div *ngIf="joiningDate.errors['required']">Joining Date is required</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Form Actions -->
+                        <div class="row">
+                            <div class="col-12">
+                                <hr class="my-4">
+                                <div class="d-flex justify-content-between flex-wrap gap-2">
+                                    <button type="button" (click)="goToEmployeeList()" 
+                                            class="btn btn-outline-secondary">
+                                        <i class="fas fa-arrow-left me-2"></i>Cancel
+                                    </button>
+                                    <button class="btn btn-primary" type="submit" [disabled]="f.invalid">
+                                        <i class="fas fa-save me-2"></i>Submit
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

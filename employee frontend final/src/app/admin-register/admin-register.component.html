@@ -1,0 +1,57 @@
+<section class="vh-100">
+    <div class="container-fluid h-custom">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-md-9 col-lg-6 col-xl-5">
+          <img src="../assets/noBgLogin.png" class="img-fluid" alt="Sample image">
+        </div>
+        <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+          <form #registerForm="ngForm" (ngSubmit)="onRegister()" novalidate>
+            
+            <!-- Admin Name Input -->
+            <div class="form-outline mb-4">
+              <input type="text" id="adminName" [(ngModel)]="registerData.adminName" name="adminName" 
+                     class="form-control form-control-lg" placeholder="Enter your name" required />
+              <label class="form-label" for="adminName">&nbsp;&nbsp;&nbsp;Admin Name</label>
+            </div>
+    
+            <!-- Email Input -->
+            <div class="form-outline mb-4">
+              <input type="email" id="email" [(ngModel)]="registerData.email" name="email" 
+                     class="form-control form-control-lg" placeholder="Enter a valid email address" required />
+              <label class="form-label" for="email">&nbsp;&nbsp;&nbsp;Email</label>
+            </div>
+    
+            <!-- Password Input -->
+            <div class="form-outline mb-3">
+              <input type="password" id="adminPassword" [(ngModel)]="registerData.adminPassword" 
+                     name="adminPassword" class="form-control form-control-lg" placeholder="Enter password" required />
+              <label class="form-label" for="adminPassword">&nbsp;&nbsp;&nbsp;Password</label>
+            </div>
+    
+            <!-- Success Message -->
+            <div *ngIf="successMessage" class="alert alert-success">
+              {{ successMessage }}
+            </div>
+            
+            <!-- Error Message -->
+            <div *ngIf="errorMessage" class="alert alert-danger">
+              {{ errorMessage }}
+            </div>
+    
+            <!-- Submit Button -->
+            <div class="text-center text-lg-start mt-4 pt-2">
+              <button type="submit" class="btn btn-dark btn-lg" 
+                      [disabled]="isSubmitting || !registerForm.form.valid"
+                      style="padding-left: 2.5rem; padding-right: 2.5rem;">
+                {{ isSubmitting ? 'Registering...' : 'Register' }}
+              </button>
+              <p class="small fw-bold mt-2 pt-1 mb-0">Already have an account? 
+                <a routerLink="/login" class="link-danger">Login</a>
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  

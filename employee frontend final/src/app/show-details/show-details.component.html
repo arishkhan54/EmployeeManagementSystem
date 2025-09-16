@@ -1,0 +1,93 @@
+<div class="container-fluid py-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-10 col-sm-12">
+            <div class="card shadow-lg">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="card-title mb-0">
+                        <i class="fas fa-user me-2"></i>Employee Details
+                    </h3>
+                </div>
+                <div class="card-body p-4">
+                    <div class="row">
+                        <!-- Employee Image -->
+                        <div class="col-md-4 text-center mb-4">
+                            <div class="employee-image-container">
+                                <img src="../assets/download.jpg" alt="Employee Photo" class="employee-image">
+                                <div class="employee-status">
+                                    <span class="badge bg-success">Active</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Employee Information -->
+                        <div class="col-md-8">
+                            <div class="table-responsive">
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <td class="fw-bold text-primary">Employee ID:</td>
+                                            <td>
+                                                <span class="badge bg-info">{{employee.id}}</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="fw-bold text-primary">Full Name:</td>
+                                            <td>{{employee.fname}} {{employee.lname}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="fw-bold text-primary">Email:</td>
+                                            <td>
+                                                <a href="mailto:{{employee.email}}" class="text-decoration-none">
+                                                    <i class="fas fa-envelope me-2"></i>{{employee.email}}
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="fw-bold text-primary">Department:</td>
+                                            <td>
+                                                <span class="badge bg-secondary">{{employee.department}}</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="fw-bold text-primary">Designation:</td>
+                                            <td>{{employee.designation}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="fw-bold text-primary">Salary:</td>
+                                            <td>
+                                                <span class="text-success fw-bold">
+                                                    <i class="fas fa-dollar-sign me-1"></i>{{employee.salary}}
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="fw-bold text-primary">Joining Date:</td>
+                                            <td>
+                                                <i class="fas fa-calendar me-2"></i>{{employee.joiningDate}}
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Action Buttons -->
+                    <div class="row mt-4">
+                        <div class="col-12">
+                            <hr class="my-3">
+                            <div class="d-flex justify-content-between flex-wrap gap-2">
+                                <a routerLink="/show-all-employees" class="btn btn-outline-secondary">
+                                    <i class="fas fa-arrow-left me-2"></i>Back to List
+                                </a>
+                                <a routerLink="/updating-by-id/{{employee.id}}" class="btn btn-primary">
+                                    <i class="fas fa-edit me-2"></i>Update Details
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
