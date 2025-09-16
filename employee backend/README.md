@@ -1,4 +1,4 @@
-# Employee Management System using Angular spring-boot mysql Full Stack Project
+# Employee Management System using Angular - Spring-boot & MySql Full Stack Project
 
 
 
@@ -13,29 +13,6 @@ The Employee Management System is a comprehensive web application designed to st
 
 *Frontend:*
 - **Angular:** The frontend of the application is developed using Angular, a powerful and dynamic front-end framework. Angular facilitates the creation of a responsive and interactive user interface, enabling seamless communication with the backend.
-
-# Home Page
-![Web capture_11-1-2024_143259_localhost](https://github.com/adityasurya4103/employee-management-system-angular-spring-boot-mysql/assets/97177344/f76ac939-84aa-480a-adaa-5f5a8b70f143)
-
-# View all Employees Page
-![Web capture_11-1-2024_143359_localhost](https://github.com/adityasurya4103/employee-management-system-angular-spring-boot-mysql/assets/97177344/d4538054-d230-4faa-9313-d0af96e64bc9)
-
-# Update Existing Employee
-![Web capture_11-1-2024_143434_localhost](https://github.com/adityasurya4103/employee-management-system-angular-spring-boot-mysql/assets/97177344/ccd9a275-7629-4261-bc65-fba9495dd537)
-
-# Add New Employee
-![Web capture_11-1-2024_143414_localhost](https://github.com/adityasurya4103/employee-management-system-angular-spring-boot-mysql/assets/97177344/2e1d666e-56bd-4e51-9481-4833cfa8753d)
-
-# Delete Employee
-![Screenshot (7)](https://github.com/adityasurya4103/employee-management-system-angular-spring-boot-mysql/assets/97177344/bf9c27c3-bc9b-4e14-8018-4b767062ac33)
-
-# Admin Login Page
-![login page](https://github.com/adityasurya4103/employee-management-system-angular-spring-boot-mysql/assets/97177344/c5c9339e-50eb-44fb-8966-af47dec94405)
-
-
-# View Details of Particular Employee
-![Web capture_11-1-2024_143456_localhost](https://github.com/adityasurya4103/employee-management-system-angular-spring-boot-mysql/assets/97177344/b86ad143-b360-4760-962a-f8e36f3bcab8)
-
 
 
 **Key Features:**
